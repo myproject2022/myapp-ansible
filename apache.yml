@@ -1,5 +1,6 @@
 - hosts: webservers 
-  become: True
+  become: yes
+  become_method: sudo
   tasks:
     - name: Install packages
       yum:
@@ -9,7 +10,7 @@
       service:
         name: httpd
         state: started
-        enabled: True
+        enabled: yes
     - name: Deploy static website
       copy:
         src: index.html
