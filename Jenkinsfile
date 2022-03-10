@@ -8,7 +8,7 @@ pipeline{
         }
         stage("execute ansible"){
             steps{
-               ansiblePlaybook inventory: 'dev.inv', playbook: 'apache.yml'
+               ansiblePlaybook  installation: 'ansible211', inventory: 'dev.inv', playbook: 'apache.yml'
             }
         }
     }
